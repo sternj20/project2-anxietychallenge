@@ -7,7 +7,7 @@ router.get("/", function(req, res){
 		if(err) console.log (err);
 		console.log(data);
 	});
-	res.render("index")
+	res.render("index");
 });
 
 // Export routes for server.js to use.
