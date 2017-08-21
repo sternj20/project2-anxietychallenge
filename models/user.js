@@ -3,7 +3,14 @@ module.exports=function(sequelize, Datatypes){
 		name: Datatypes.STRING,
 		google_id: Datatypes.STRING,
 		email: Datatypes.STRING,
-		imageURL: Datatypes.STRING
+		imageURL: Datatypes.STRING,
 	});
+	User.associate = function(models){
+		User.belongsTo(models.Question, {
+	      foreignKey: {
+	        allowNull: false
+	      }
+	  });
+	};
 	return User;
 };

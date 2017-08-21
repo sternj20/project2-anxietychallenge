@@ -3,5 +3,9 @@ module.exports=function(sequelize, Datatypes){
 		challenge: Datatypes.STRING,
 		difficulty: Datatypes.INTEGER
 	});
+	Question.associate = function(models){
+		Question.hasMany(models.User, {
+		});
+	};
 	return Question;
 };

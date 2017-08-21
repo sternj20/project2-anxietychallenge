@@ -1,7 +1,11 @@
-  <form method ="post" action="/api/questions">
-  	<button class = "startChallenge">Start your challenge!</button>
-  </form>
-
-
+<button class = "startChallenge"><a href = "./api/generatequestions">Start your challenge!</a></button>
+<ul>
+	{{#each questions}}
+	<li>
+		Challenge {{this.id}}
+		{{this.challenge}}
+	</li>
+	{{/each}}
+</ul>
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <a href="#" onclick="signOut();">Sign out</a>
