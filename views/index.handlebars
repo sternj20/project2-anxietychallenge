@@ -4,8 +4,20 @@
 	<li>
 		Challenge {{this.id}}
 		{{this.challenge}}
+		<form action="/api/addactivity/{{this.id}}" method="POST">
+			<button type = "submit">Complete</button>
+		</form>
+	</li>
+	{{/each}}
+
+	<ul>
+	Completed challenges
+	{{#each completedQuestions}}
+	<li>
+	{{this.question_id}}
 	</li>
 	{{/each}}
 </ul>
+
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <a href="#" onclick="signOut();">Sign out</a>

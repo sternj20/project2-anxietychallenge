@@ -1,3 +1,4 @@
+var models = require("./");
 module.exports=function(sequelize, Datatypes){
 	var User = sequelize.define("User", {
 		name: Datatypes.STRING,
@@ -5,12 +6,8 @@ module.exports=function(sequelize, Datatypes){
 		email: Datatypes.STRING,
 		imageURL: Datatypes.STRING,
 	});
-	User.associate = function(models){
-		User.belongsTo(models.Question, {
-	      foreignKey: {
-	        allowNull: false
-	      }
-	  });
+User.associate = function(models){
+	User.hasMany(models.Activity);
 	};
-	return User;
+return User;
 };
