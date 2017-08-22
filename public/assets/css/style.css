@@ -1,0 +1,44 @@
+body {
+  width: 99%;
+  height: 900px;
+  background-color: #827676;
+}
+/**  Navegation files
+*/
+.navbar-header {
+  width: 100%;
+  height: 75px;
+  color: white;
+}
+.navbar-inverse {
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.navbar-right {
+  font-size: 18px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color: #cb39cc
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+	margin-left: 40px;
+	font-size: 40px;
+}
+
+.navbar-inverse {
+	border: none;
+}
+
+.btn {
+  margin-left: 500px;
+  margin-top: 15px;
+}

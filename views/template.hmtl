@@ -21,18 +21,18 @@
 
 		   <div>
 		      <ul class = "nav navbar-nav navbar-right">
-		         <li class = "active">
-							 <a href = "#" class="g-signin2" data-onsuccess="onSignIn">Sign In</a></li>
-							  <li><a href = "#">Sign In</a></li>
+
 		         <li><a href = "#" onclick="signOut();">Sign out</a></li>
 		      </ul>
 		   </div>
 		</nav>
+    <div class="container">
+    <!--enter code here  -->
+    <p> hi there </p>
+    </div><!-- end code here -->
 
-
-		{{{ body }}}
-		<script src = "assets/js/script.js"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
-	</body>
+    <script src = "assets/js/script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
+  </body>
 </html>
