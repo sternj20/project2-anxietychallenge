@@ -30,29 +30,38 @@ router.get("/", function(req, res){
 });
 
 router.get("/api/generatequestions", function(req, res){
-	var hbsObject;
-	db.Question.findAll({})
+	var hbsObject = {};
+	db.Question.findAll({
+	})
 	.then(function(data){
-		hbsObject	= {questions: data};
-		db.Activity.findAll({})
+		hbsObject.questions = data;
+		db.Activity.findAll({
+			where: db.Question.id = db.Activity.QuestionId,
+			include: [db.Question]
+		})
 		.then(function(data){
 			hbsObject.completedQuestions = data;
+			hbsObject.userId = '1';
+			res.render("challenges", hbsObject);
 		});
-		console.log(hbsObject);
-		res.render("challenges", hbsObject);
 	});
 });
 
 //update question to completed
 router.post("/api/addactivity/:id", function(req, res){
-	console.log(req.body)
 	db.Activity.create({
-		question_id: req.params.id,
+		QuestionId: req.params.id,
 		journal_entry: 'blank',
 		UserId: req.body.UserId
 	});
-	res.redirect("/api/generatequestions")
+	res.redirect("/api/generatequestions");
 });
 
 // Export routes for server.js to use.
 module.exports = router;
+
+//RETURN ALL THE QUESTIONS WHERE THE USER ID IS NOT ASSOCIATED WITH THAT QUESTION ID IN THE ACTIVITY TABLE
+
+//RETURN THE COMPLETED QUESTIONS ASSOCIATED W/ THE QUESTION ID
+
+// activities.find({where})
