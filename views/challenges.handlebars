@@ -27,21 +27,20 @@
         </div>
     </nav>
     <ul>
-        {{userId}} {{#each questions}} {{userId}}
-
+        {{#each questions}}
         <li>
             Challenge {{this.id}} {{this.challenge}}
             <form action="/api/addactivity/{{this.id}}" method="POST">
-                <input type="hidden" value="{{userId}}" name="UserId">
+                <input type="hidden" value="{{../userId}}" name="UserId">
                 <button type="submit">Complete</button>
             </form>
         </li>
         {{/each}}
-
+    </ul>
         <ul>
             Completed challenges {{#each completedQuestions}}
             <li>
-                {{this.question_id}}
+                Challenge {{this.id}} {{this.Question.challenge}}
             </li>
             {{/each}}
         </ul>

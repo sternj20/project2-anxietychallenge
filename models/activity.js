@@ -5,12 +5,16 @@ module.exports=function(sequelize, Datatypes){
 	});
 	Activity.associate = function(models){
 		Activity.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    }
-
-		);
+			foreignKey: {
+				allowNull: false
+			}
+		});
+		Activity.belongsTo(models.Question, {
+			foreignKey: {
+				allowNull: false,
+			}
+		});
 	};
 	return Activity;
 };
+
