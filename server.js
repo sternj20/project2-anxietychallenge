@@ -1,9 +1,12 @@
 var express = require("express");
 var body = require("body-parser");
 var path = require("path");
-var exphbs = require("express-handlebars");
 var app = express();
+var exphbs = require("express-handlebars");
+var db = require("./models");
 var router = require(path.join(__dirname, "controllers", "controller.js"));
+
+
 
 var PORT = process.env.PORT || 7000;
 
@@ -18,12 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", router);
 
-
-app.listen(PORT, function(error) {
-	if (error){
-		return console.log(error);
-	}
-  console.log("App listening on PORT " + PORT);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
-
-

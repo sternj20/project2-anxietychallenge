@@ -75,11 +75,11 @@
 		{
 			"question": "Ask someone on the street what they think of your outfit.",
 			"difficulty": "2"
-		}
+		},
 		{
 			"question": "Go to a park or public place and convince someone to do 10 pushups with you.",
 			"difficulty": "3"
-		},
+		}
 	]
 }
 
