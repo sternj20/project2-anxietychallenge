@@ -13,12 +13,26 @@
 
 	</head>
 	<body>
+		<nav class = "navbar navbar-inverse" role = "navigation">
 
+		   <div class = "navbar-header">
+		      <a class = "navbar-brand" href = "#"></a>
+		   </div>
 
+		   <div>
+		      <ul class = "nav navbar-nav navbar-right">
 
-		{{{ body }}}
-		<script src = "assets/js/script.js"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
-	</body>
+		         <li><a href = "#" onclick="signOut();">Sign out</a></li>
+		      </ul>
+		   </div>
+		</nav>
+    <div class="container">
+    <!--enter code here  -->
+    <p> hi there </p>
+    </div><!-- end code here -->
+
+    <script src = "assets/js/script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
+  </body>
 </html>
