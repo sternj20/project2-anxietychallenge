@@ -1,4 +1,3 @@
-var models = require("./");
 module.exports=function(sequelize, Datatypes){
 	var Activity = sequelize.define("Activity", {
 		question_id: Datatypes.INTEGER,
@@ -6,7 +5,12 @@ module.exports=function(sequelize, Datatypes){
 	});
 	Activity.associate = function(models){
 		Activity.belongsTo(models.User, {
-		});
+      foreignKey: {
+        allowNull: false
+      }
+    }
+
+		);
 	};
 	return Activity;
 };
