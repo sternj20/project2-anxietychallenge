@@ -3,6 +3,12 @@ body {
   height: 900px;
   background-color: #827676;
 }
+/* challanges */
+.list-group-item .active {
+  padding: 0px;
+
+}
+
 /**  Navegation files
 */
 .navbar-header {
