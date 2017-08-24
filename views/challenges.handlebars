@@ -14,38 +14,52 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#"></a>
-        </div>
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#"></a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav navbar-right">
 
-        <div>
-            <ul class="nav navbar-nav navbar-right">
-
-                <li><a href="#" onclick="signOut();">Sign out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <ul>
-        {{#each questions}}
-        <li>
-            Challenge {{this.id}} {{this.challenge}}
-            <form action="/api/addactivity/{{this.id}}" method="POST">
-                <input type="hidden" value="{{../userId}}" name="UserId">
-                <button type="submit">Complete</button>
-            </form>
-        </li>
-        {{/each}}
-    </ul>
-        <ul>
-            Completed challenges {{#each completedQuestions}}
-            <li>
-                Challenge {{this.id}} {{this.Question.challenge}}
+            <li><a href="#" onclick="signOut();">Sign out</a>
             </li>
-            {{/each}}
         </ul>
+      </div>
+    </nav>
+    <div class="container">
+    <!--enter code here  -->
+      <div class="row">
+        <div class="col-md-12">
+        <h2>Welcome! Ready to get started?</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+         <strong> Challenges completed</strong>
+         <ul class="list-group">
+          {{#each completedQuestions}}
+            <li class="list-group-item">
+                {{this.id}}  {{this.Question.challenge}}
+            </li> <!--end of li grp item-->
+          {{/each}}
+         </ul><!-- end list group-->
+        </div>
+        <div class="col-md-6">
+        <strong>Uncompleted Challenges </strong>
+        <ul class="list-group">
+              {{#each questions}}  {{userId}}
+          <li class="list-group-item active">
+           {{this.id}} {{this.challenge}}
+            <form action="/api/addactivity/{{this.id}}" method="POST">
+              <input type="hidden" value="{{../userId}}" name="UserId">
+              <button type="submit">Complete</button>
+            </form>
+          </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+     </div>
     </div>
-    <!-- end code here -->
+  </div>  <!-- end code here -->
 
     <script src="assets/js/script.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>

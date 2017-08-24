@@ -60,8 +60,3 @@ router.post("/api/addactivity/:id", function(req, res){
 // Export routes for server.js to use.
 module.exports = router;
 
-//RETURN ALL THE QUESTIONS WHERE THE USER ID IS NOT ASSOCIATED WITH THAT QUESTION ID IN THE ACTIVITY TABLE
-
-//RETURN THE COMPLETED QUESTIONS ASSOCIATED W/ THE QUESTION ID
-
-// activities.find({where})
