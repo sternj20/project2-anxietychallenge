@@ -13,10 +13,6 @@ var testUser ={
 	imageURL: 'http://sternj20.github.io'
 };
 
-router.get("/new", function(req, res){
-	db.Question.sequelize.query('Select * from Questions', {type: db.Question.sequelize.QueryTypes.SELECT});
-
-});
 router.get("/", function(req, res){
 	//create a test user
 	db.User.create(testUser);
