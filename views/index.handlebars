@@ -1,7 +1,38 @@
-  <form method ="post" action="/api/questions">
-  	<button class = "startChallenge">Start your challenge!</button>
-  </form>
+<nav class = "navbar navbar-inverse" role = "navigation">
+	 <div class = "navbar-header">
+			<a class = "navbar-brand" href = "#"></a>
+	 </div>
 
+	 <div>
+			<ul class = "nav navbar-nav navbar-right">
+				 <li class = "active">
+					 <a href = "#" class="g-signin2" data-onsuccess="onSignIn">Sign In</a></li>
+						<li><a href = "#">Sign In</a></li>
+				 <li><a href = "#" onclick="signOut();">Sign out</a></li>
+			</ul>
+	 </div>
+</nav>
 
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
-<a href="#" onclick="signOut();">Sign out</a>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-center" >
+			<img src="/images/social.jpg" alt="Anxiety Challenge" />
+		</div>
+  </div> <!--end of row 1st -->
+
+	<!-- <div class="row">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+  </div> end of 2row -->
+
+  <div class="row">
+			<h1> Get over it!!! </h1>
+    	<a href="challenges.html">
+      <button class = "startChallenge"><a href = "./api/generatequestions">Start your challenge!</a></button>
+
+  </div>
+
+ <!-- <form  method ="get" action="/api/questions">
+</form>end of 3row -->
+
+</div> <!--end of container  -->
