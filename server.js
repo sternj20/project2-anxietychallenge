@@ -25,5 +25,3 @@ app.listen(PORT, function(error) {
 	}
   console.log("App listening on PORT " + PORT);
 });
-
-

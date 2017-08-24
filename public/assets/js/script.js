@@ -12,3 +12,5 @@ function signOut() {
       console.log('User signed out.');
     });
   }
+
+module.exports = auth;
