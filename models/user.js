@@ -13,3 +13,5 @@ User.associate = function(models){
 
 return User;
 };
+
+// SELECT * FROM Questions INNER JOIN Activities ON Questions.id = Activities.questionId;
