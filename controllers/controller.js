@@ -3,6 +3,7 @@ var router = express.Router();
 var fs = require("fs");
 var db = require("../models/");
 
+
 //test user for database
 var testUser ={
 	id: '1',
@@ -31,8 +32,8 @@ router.get("/", function(req, res){
 
 router.get("/api/generatequestions", function(req, res){
 	var hbsObject = {};
-	db.Question.findAll({
-	})
+	db.Question.sequelize.query('Select * from Questions WHERE id NOT IN (SELECT id FROM activities)',
+		{type: db.Question.sequelize.QueryTypes.SELECT})
 	.then(function(data){
 		hbsObject.questions = data;
 		db.Activity.findAll({
@@ -53,8 +54,9 @@ router.post("/api/addactivity/:id", function(req, res){
 		QuestionId: req.params.id,
 		journal_entry: 'blank',
 		UserId: req.body.UserId
+	}).then(function(){
+		res.redirect("/api/generatequestions");
 	});
-	res.redirect("/api/generatequestions");
 });
 
 // Export routes for server.js to use.
