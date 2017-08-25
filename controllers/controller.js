@@ -27,7 +27,7 @@ router.get("/", function(req, res){
 })
 .catch(function(err) {
     // print the error details
-    console.log(err, request.body.email);
+    console.log(err);
 });
 	res.render("index");
 });
