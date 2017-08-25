@@ -11,24 +11,24 @@ var testUser ={
 	google_id: '12345',
 	email: 'jessesternmusic@gmail.com',
 	imageURL: 'http://sternj20.github.io'
-};
+// };
 
-var testActivity = {
-	question_id: 0,
-	journal_entry: 'blank'
+// var testActivity = {
+// 	question_id: 1,
+// 	journal_entry: 'blank'
 };
 
 router.get("/", function(req, res){
 	//create a test user
 	db.User.create(testUser);
-	db.Activity.create(testActivity).then(function(user) {
-    // you can now access the newly created task via the variable task
-    console.log('success');
-})
-.catch(function(err) {
-    // print the error details
-    console.log(err);
-});
+// 	db.Activity.create(testActivity).then(function(user) {
+//     // you can now access the newly created task via the variable task
+//     console.log('success');
+// })
+// .catch(function(err) {
+//     // print the error details
+//     console.log(err);
+// });
 	res.render("index");
 });
 
