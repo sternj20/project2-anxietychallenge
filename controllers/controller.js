@@ -34,7 +34,7 @@ router.get("/", function(req, res){
 
 router.get("/api/generatequestions", function(req, res){
 	var hbsObject = {};
-	db.Question.sequelize.query('Select * from questions WHERE id NOT IN (SELECT id FROM activities)',
+	db.Question.sequelize.query('Select * from Questions WHERE id NOT IN (SELECT id FROM Activities)',
 		{type: db.Question.sequelize.QueryTypes.SELECT})
 	.then(function(data){
 		hbsObject.questions = data;
