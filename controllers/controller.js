@@ -13,20 +13,15 @@ var testUser ={
 	imageURL: 'http://sternj20.github.io'
 };
 
+var testActivity = {
+	question_id: null,
+	journal_entry: null
+};
+
 router.get("/", function(req, res){
 	//create a test user
 	db.User.create(testUser);
-	var parseData;
-	fs.readFile('./public/assets/js/questions.json', 'utf8', function(err, data){
-		if(err) console.log (err);
-		parseData = JSON.parse(data);
-		parseData.anxiety.forEach(function(element){
-			db.Question.create({
-				challenge: element.question,
-				difficulty: element.difficulty
-			});
-		});
-	});
+	db.Activity.create(testActivity);
 	res.render("index");
 });
 
