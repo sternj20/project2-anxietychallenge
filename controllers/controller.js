@@ -20,7 +20,7 @@ var testUser ={
 
 router.get("/", function(req, res){
 	//create a test user
-	db.User.create(testUser);
+	// db.User.create(testUser);
 // 	db.Activity.create(testActivity).then(function(user) {
 //     // you can now access the newly created task via the variable task
 //     console.log('success');
