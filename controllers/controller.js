@@ -14,8 +14,8 @@ var testUser ={
 };
 
 var testActivity = {
-	question_id: null,
-	journal_entry: null
+	question_id: 0,
+	journal_entry: 'blank'
 };
 
 router.get("/", function(req, res){
