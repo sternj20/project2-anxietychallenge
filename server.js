@@ -17,7 +17,7 @@ app.set("view engine", "handlebars");
 app.use(body.json()); // support json encoded bodies
 app.use(body.urlencoded({ extended: true })); // support encoded bodies
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 
 app.use("/", router);
 
