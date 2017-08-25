@@ -24,6 +24,7 @@ app.use("/", router);
 db.User.hasMany(db.Activity);
 db.Activity.belongsTo(db.User);
 // Syncing our sequelize models and then starting our Express app
+// { force: true }
 // =============================================================
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
