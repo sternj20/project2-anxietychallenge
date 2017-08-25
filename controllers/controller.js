@@ -19,16 +19,17 @@ var testUser ={
 };
 
 router.get("/", function(req, res){
-	//create a test user
-	// db.User.create(testUser);
-// 	db.Activity.create(testActivity).then(function(user) {
-//     // you can now access the newly created task via the variable task
-//     console.log('success');
-// })
-// .catch(function(err) {
-//     // print the error details
-//     console.log(err);
-// });
+	var parseData;
+	fs.readFile('./public/assets/js/questions.json', 'utf8', function(err, data){
+		if(err) console.log (err);
+		parseData = JSON.parse(data);
+		parseData.anxiety.forEach(function(element){
+			db.Question.create({
+				challenge: element.question,
+				difficulty: element.difficulty
+			});
+		});
+	});
 	res.render("index");
 });
 
