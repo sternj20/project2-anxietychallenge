@@ -25,7 +25,7 @@ a:focus {
 
 .masthead {
   background: white;
-  padding: 60px 0;
+  padding: 25px 0;
   position: relative;
   z-index: 2;
 }
@@ -58,8 +58,8 @@ a:focus {
 .button-panel {
   background: white;
   padding: 30px 0;
-  position: relative;
   z-index: 2;
+  text-align: center;
 }
 /**  Navegation files
 */
@@ -78,7 +78,7 @@ a:focus {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-	color: #ffffff;
+	color: white;
 	font-size: 20px;
 }
 
@@ -94,11 +94,6 @@ a:focus {
 
 .navbar-inverse {
 	border: none;
-}
-
-.btn {
-  margin-left: 500px;
-  margin-top: 15px;
 }
 
 .promo {
@@ -123,14 +118,30 @@ a:focus {
 }
 
 .btn {
-  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif;
-  border: 1px solid transparent;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1.6;
-  border-radius: 4px;
-  text-transform: uppercase;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-transition: all .25s linear;
-  transition: all .25s linear;
+	background-color: #DC4A38;
+	border-color: #DC4A38;
+	width: 124px;
+	height: 46px;
+    font-size: 16px;
+    /*margin: 5px;*/
+    text-align: center;
+    font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+    color: white;
+
+  }
+
+.btn:hover {
+    color: black;
+}
+
+.googleimage {
+	padding: 0;
+	margin: 0;
+	height: 30px;
+	width: 30px;
+}
+
+.banner {
+	width: 1165px;
+	height: 50%;
 }
