@@ -19,17 +19,6 @@ var testUser ={
 };
 
 router.get("/", function(req, res){
-	var parseData;
-	fs.readFile('./public/assets/js/questions.json', 'utf8', function(err, data){
-		if(err) console.log (err);
-		parseData = JSON.parse(data);
-		parseData.anxiety.forEach(function(element){
-			db.Question.create({
-				challenge: element.question,
-				difficulty: element.difficulty
-			});
-		});
-	});
 	res.render("index");
 });
 
