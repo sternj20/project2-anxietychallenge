@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/sternj20/project2-anxietychallenge#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
+    "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",

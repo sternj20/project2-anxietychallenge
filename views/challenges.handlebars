@@ -37,7 +37,7 @@
          <ul class="list-group">
           {{#each completedQuestions}}
             <li class="list-group-item">
-                {{this.id}}  {{this.Question.challenge}}
+              <bold>  {{this.id}}  {{this.Question.challenge}}</bold>
             </li> <!--end of li grp item-->
           {{/each}}
          </ul><!-- end list group-->
@@ -50,7 +50,9 @@
            {{this.id}} {{this.challenge}}
             <form action="/api/addactivity/{{this.id}}" method="POST">
               <input type="hidden" value="{{../userId}}" name="UserId">
-              <button type="submit">Complete</button>
+              <button type="submit" class="btn btn-warning" aria-label="Left Align">
+                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Complete
+              </button>
             </form>
           </li>
             {{/each}}
@@ -58,7 +60,7 @@
         </div>
       </div>
      </div>
-    </div>
+
   </div>  <!-- end code here -->
 </body>
 
