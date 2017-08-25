@@ -48,7 +48,7 @@ router.get("/api/generatequestions", function(req, res){
 			res.render("challenges", hbsObject);
 		});
 	});
-// });
+});
 
 //update question to completed
 router.post("/api/addactivity/:id", function(req, res){
@@ -63,4 +63,3 @@ router.post("/api/addactivity/:id", function(req, res){
 
 // Export routes for server.js to use.
 module.exports = router;
-
