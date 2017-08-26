@@ -22,7 +22,22 @@ a:focus {
 a:focus {
   outline: none;
 }
-
+h2 {
+  font-family: "SourceSansProExtraLight", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  line-height: 1.2;
+  color: #9C289B;
+  font-family: 'Amatic SC', cursive;
+}
+h3 {
+  color: #5a595a;
+  font-family: "SourceSansProBold", Helvetica, Arial, sans-serif;
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-left: 4px;
+  font-family: 'raleway', sans-serif;
+}
 .masthead {
   background: white;
   padding: 25px 0;
