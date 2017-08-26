@@ -6,7 +6,9 @@
 	<div>
 		<ul class = "nav navbar-nav navbar-right">
 			<li class = "active">
-				<button id="login_button" type="button" name="button">Login!</button>
+				<form action="/user/check" method="POST">
+				<button id="login_button" type="submit" name="button">Login!</button>
+				</form>
 				<li><a href = "#" onclick="signOut();">Sign out</a></li>
 			</ul>
 		</div>
