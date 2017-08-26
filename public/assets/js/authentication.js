@@ -1,3 +1,11 @@
+//shows the question page
+function showQuestionPage(){
+  //if there is a user logged in
+  if (firebase.auth().currentUser){
+    window.open("/api/generatequestions/" + firebase.auth().currentUser.uid, "_self");
+  } 
+}
+
 $(document).ready(function() {
   var config = {
     apiKey: "AIzaSyA_O7K2wLkFH7wIr-XA-rtpV3bzIGKg3lc",
@@ -12,7 +20,7 @@ $(document).ready(function() {
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log("logged in");
+      console.log("logged in as " + user.displayName + ' ' + user.uid);
 
       // Display picture and name on page
       notLoggedIn();
@@ -53,10 +61,10 @@ $(document).ready(function() {
         photo = user.photoURL;
         uid = user.uid;
         // console.log("USER OBJECT 0", user);
-        localStorage.setItem("name", user.displayName);
-        localStorage.setItem("picture", user.photoURL);
-        localStorage.setItem("guid", user.uid);
-        localStorage.setItem("email", user.email);
+        // localStorage.setItem("name", user.displayName);
+        // localStorage.setItem("picture", user.photoURL);
+        // localStorage.setItem("guid", user.uid);
+        // localStorage.setItem("email", user.email);
         // console.log(localStorage.name);
         // $("#user_name").text(localStorage.name);
         // $("#display_picture").src(localStorage.photoURL);
@@ -75,15 +83,7 @@ $(document).ready(function() {
         // NOTE: We'll probably be using a $.get here so that we can get
         // access to all the existing users.
         $.post("/user/check", userObject)
-          .done(function(data) {
-            console.log("POSTING DATA", data);
-            // localStorage.setItem("userid", data.user_data.id);
-            // console.log(localStorage.userid);
-            // var destination = data.redirect;
-            // window.location.href = window.location + destination;
-            // console.log(localStorage.userid);
-            // console.log("writing to db");
-          });
+        setTimeout(showQuestionPage, 1000);
 
         //If the we can find the user in the json, we send an object back
         //with the new users cred.
@@ -104,3 +104,4 @@ $(document).ready(function() {
     });
   }
   });
+
