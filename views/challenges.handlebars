@@ -1,45 +1,48 @@
-  <div class="container">
-    <!--enter code here  -->
-      <div class="row">
-        <div class="col-md-12">
-        <h2>Welcome! Ready to get started?</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-         <strong> Challenges completed</strong>
-         <ul class="list-group">
-           {{#each completedQuestions}}
-            <li class="list-group-item">
-              <bold>  {{this.id}}  {{this.Question.challenge}}</bold>
-            </li> <!--end of li grp item-->
-          {{/each}}
-         </ul><!-- end list group-->
-        </div>
-        <div class="col-md-6">
-        <strong>Uncompleted Challenges </strong>
-          <ul class="list-group">
-            {{#each questions}}  {{userId}}
-            <li class="list-group-item active">
-              {{this.id}} {{this.challenge}}
-              <form action="/api/addactivity/{{this.id}}" method="POST">
-                <input type="hidden" value="{{../userId}}" name="UserId">
-                <div>
-                  <button type="submit" class="btn-warning" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Complete
-                  </button>
-                </div>
-              </form>
-            </li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
+<div class="container">
+  <!--enter code here  -->
+ <div class="row">
+	 <div class="button-panel col-md-12">
+			<a href="#" class="btn btn-default btn-lg" role="button" onclick="signOut(); ">Sign out</a>
+	 </div>
+ </div>
+</div>
+  <div class="row">
+    <div class="col-md-12">
+    <h2>Welcome! Ready to get started?</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+     <strong> Challenges completed</strong>
+     <ul class="list-group">
+       {{#each completedQuestions}}
+        <li class="list-group-item">
+          <bold>  {{this.id}}  {{this.Question.challenge}}</bold>
+        </li> <!--end of li grp item-->
+      {{/each}}
+     </ul><!-- end list group-->
+    </div>
+    <div class="col-md-6">
+    <strong>Uncompleted Challenges </strong>
+      <ul class="list-group">
+        {{#each questions}}  {{userId}}
+        <li class="list-group-item active">
+          {{this.id}} {{this.challenge}}
+          <form action="/api/addactivity/{{this.id}}" method="POST">
+            <input type="hidden" value="{{../userId}}" name="UserId">
+            <div>
+              <button type="submit" class="btn-warning" aria-label="Left Align">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Complete
+              </button>
+            </div>
+          </form>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+</div>  <!-- end code here -->
 
-
-  </div>  <!-- end code here -->
-
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="661202478921-fmitcrqkg5ej3htdj4bje2eenqetgvv2.apps.googleusercontent.com">
 </body>
 
 </html>

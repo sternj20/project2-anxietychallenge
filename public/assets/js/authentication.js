@@ -3,7 +3,7 @@ function showQuestionPage(){
   //if there is a user logged in
   if (firebase.auth().currentUser){
     window.open("/api/generatequestions/" + firebase.auth().currentUser.uid, "_self");
-  } 
+  }
 }
 
 $(document).ready(function() {
@@ -104,4 +104,3 @@ $(document).ready(function() {
     });
   }
   });
-
