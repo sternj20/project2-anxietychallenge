@@ -1,5 +1,4 @@
-  
-    <div class="container">
+  <div class="container">
     <!--enter code here  -->
       <div class="row">
         <div class="col-md-12">
@@ -9,7 +8,7 @@
         <div class="col-md-6">
          <strong> Challenges completed</strong>
          <ul class="list-group">
-          {{#each completedQuestions}}
+           {{#each completedQuestions}}
             <li class="list-group-item">
               <bold>  {{this.id}}  {{this.Question.challenge}}</bold>
             </li> <!--end of li grp item-->
@@ -18,22 +17,24 @@
         </div>
         <div class="col-md-6">
         <strong>Uncompleted Challenges </strong>
-        <ul class="list-group">
-              {{#each questions}}  {{userId}}
-          <li class="list-group-item active">
-           {{this.id}} {{this.challenge}}
-            <form action="/api/addactivity/{{this.id}}" method="POST">
-              <input type="hidden" value="{{../userId}}" name="UserId">
-              <button type="submit" class="btn btn-warning" aria-label="Left Align">
-                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Complete
-              </button>
-            </form>
-          </li>
+          <ul class="list-group">
+            {{#each questions}}  {{userId}}
+            <li class="list-group-item active">
+              {{this.id}} {{this.challenge}}
+              <form action="/api/addactivity/{{this.id}}" method="POST">
+                <input type="hidden" value="{{../userId}}" name="UserId">
+                <div>
+                  <button type="submit" class="btn-warning" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Complete
+                  </button>
+                </div>
+              </form>
+            </li>
             {{/each}}
           </ul>
         </div>
       </div>
-     </div>
+
 
   </div>  <!-- end code here -->
 

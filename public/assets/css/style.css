@@ -116,7 +116,11 @@ a:focus {
     color: white;
     float: center;
   }
-
+.btn-warning {
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+}
 .btn:hover {
     color: black;
 }
