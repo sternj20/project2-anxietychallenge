@@ -13,4 +13,3 @@ function signOut() {
     });
   }
 
-console.log('hi')
