@@ -20,7 +20,7 @@ router.post("/api/addactivity/:id", function(req, res) {
 		res.render("index");
 	});
 
-	router.get("/api/generatequestions", function(req, res){
+	router.get("/api/generatequestions/:new_user?", function(req, res){
 		var hbsObject = {};
 		db.Question.sequelize.query('Select * from Questions WHERE id NOT IN (SELECT id FROM Activities)',
 			{type: db.Question.sequelize.QueryTypes.SELECT})
@@ -38,42 +38,44 @@ router.post("/api/addactivity/:id", function(req, res) {
 		});
 	});
 
-	router.post("/user/check", function(req, res) {
-		var new_user = req.body;
-		console.log("------------------------------");
-		console.log(req.body);
-		db.User.findOne({
-			where: {
-				google_id: new_user.guid
-			}
-		}).then(data => {
-			if (data === null) {
-				db.User.create({
-					google_id: new_user.guid,
-					name: new_user.name,
-					email: new_user.email,
-					photo: new_user.picture
-				}).then(result => {
-					console.log("------------------------------");
-					console.log("successfully wrote new user to database");
+router.post("/user/check", function(req, res) {
+    var new_user = '1223'
+    console.log("------------------------------");
+    console.log('this is the request body guid' + new_user);
+    //checking to see if new user is already in user table
+    db.User.findOne({
+        where: {
+            google_id: new_user.guid
+        }
+    }).then(data => {
+        //if there is no corresponding user in user table create one
+        if (data === null) {
+            db.User.create({
+                google_id: new_user.guid,
+                name: new_user.name,
+                email: new_user.email,
+                // photo: new_user.picture
+            }).then(result => {
+                console.log("------------------------------");
+                console.log("successfully wrote new user to database");
         // redirect stuff still not working
         console.log(result);
-        res.send({
-        	redirect: "challenges",
-        	user_data: result.dataValues
-        });
       });
-		} else {
-			console.log(data.dataValues);
+        } else {
+            console.log('working')
+            // console.log(data.dataValues);
       //redirect stuff still not working
-      res.send({
-      	redirect: "challenges",
-      	user_data: data.dataValues
-      });
-    }
- 		});
-	});
+      // res.send({
+      //     user_data: data.dataValues
+      // });
 
+    }
+  });
+});
+
+router.get("/user/check", function(req, res) {
+    res.redirect("/check/")
+});
 	router.get("/api/getuserprogress", function(req, res) {
 		var hbsObject = {};
 		db.User.findOne({
